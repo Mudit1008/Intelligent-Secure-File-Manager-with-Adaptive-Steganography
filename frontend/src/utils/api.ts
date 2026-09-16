@@ -68,7 +68,7 @@ export interface VaultFile {
   createdAt: string
 }
 
-const API_BASE_URL = 'http://localhost:3000'
+const API_BASE_URL = 'https://secure-file-manager-backend.onrender.com'
 
 function getAuthHeaders(): Record<string, string> {
   // Get token from localStorage (set by auth store)
