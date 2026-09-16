@@ -30,9 +30,14 @@ interface WorkerExtractResponse {
 }
 
 function getWorkerBaseUrl(): string {
+  if (process.env.WORKER_URL) {
+    return process.env.WORKER_URL.replace(/\/$/, '')
+  }
+
   const host = process.env.WORKER_HOST || 'localhost'
   const port = process.env.WORKER_PORT || '5000'
   const protocol = process.env.WORKER_PROTOCOL || 'http'
+
   return `${protocol}://${host}:${port}`
 }
 
